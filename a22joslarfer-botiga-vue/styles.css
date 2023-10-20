@@ -1,0 +1,190 @@
+body {
+    background-color: antiquewhite;
+    font-family: 'DM Serif Display', serif;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.div-botiga-container {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.div-botiga-container h1 {
+    font-size: 110px;
+    margin-top: 200px;
+    font-variant: small-caps;
+}
+
+.div-botiga-container .btn-show-productos {
+    font-size: 50px;
+    font-family: fantasy;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    position: relative;
+
+}
+
+
+.header::selection,
+aside::selection,
+footer::selection {
+    background-color: rgba(31, 32, 32, 0.226);
+    color: rgba(72, 125, 146, 0.685);
+}
+
+div nav {
+    padding: 5%;
+    font-size: 50px;
+    background-color: rgba(127, 255, 212, 0.616);
+    margin: 10px;
+    width: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 0.1fr 3fr;
+    grid-template-areas:
+        "header ."
+        "items aside"
+    ;
+    height: auto;
+}
+
+.container .items {
+    grid-area: items;
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+
+aside {
+    grid-area: aside;
+    text-align: center;
+    background-color: rgba(151, 139, 139, 0.144);
+    min-width: 300px;
+    width: 80%;
+    margin: 8px;
+}
+
+
+.container .header {
+    margin-top: 10px;
+    font-size: 50px;
+    text-align: center;
+    height: 100px;
+    grid-area: header;
+}
+
+
+
+
+
+.container .item {
+
+    width: auto;
+    height: auto;
+    height: auto;
+    border: 2px;
+    text-align: center;
+    color: white;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 8px;
+
+
+}
+
+.container.item button input[type="text"] {
+
+    background-color: #79686879;
+}
+
+img {
+    display: block;
+    height: 200px;
+    width: 200px;
+}
+
+.item button {
+    position: relative;
+    top: 195px;
+    width: 90%;
+    padding: 1.5%;
+    background-color: hsla(0, 0%, 100%, 0.445);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+
+
+
+.item h2 {
+    height: 40px;
+    background-color: rgba(99, 34, 34, 0.589);
+    width: 100%;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    left: 0;
+}
+
+.container .item:nth-child(1) {
+    grid-area: i1;
+}
+
+.container .item:nth-child(2) {
+    grid-area: i2;
+}
+
+.container .item:nth-child(3) {
+    grid-area: i3;
+}
+
+.container .item:nth-child(4) {
+    grid-area: i4;
+}
+
+.container .item:nth-child(5) {
+    grid-area: i5;
+}
+
+.container .item:nth-child(6) {
+    grid-area: i6;
+}
+
+.container .item:nth-child(7) {
+    grid-area: i7;
+}
+
+.container .item:nth-child(8) {
+    grid-area: i8;
+}
+
+.container .item:nth-child(9) {
+    grid-area: i9;
+}
+
+
+.item:hover {
+    transform: scale(1.1);
+}
+
+.item:nth-child(odd):hover h2 {
+    background-color: rgba(70, 69, 69, 0.445);
+}
+
+.item:nth-child(even):hover h2 {
+    background-color: rgba(70, 69, 69, 0.445);
+}

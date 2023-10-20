@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://unpkg.com/browse/vue@3.3.4/dist/vue.global.js"></script>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+
+</head>
+
+<body>
+
+    <script src="getProductos.js" type="module"></script>
+
+    <div class="container">
+        <div class="app" id="app">
+
+            <div v-if="estatActiu('portada')" class="jumbotron">
+                <div class="div-botiga-container">
+                    <h1 class="display-4 mt-4">Benvingut a la botiga!</h1>
+                    <button @click="mostraDiv('botiga')" class="btn btn-primary btn-lg">Mostrar Productos</button>
+                </div>
+            </div>
+
+            <div v-if="estatActiu('botiga')" class="container">
+                <header class="header display-4">PRODUCTES</header>
+                <div class="row items">
+                    <div class="col-lg-3 item" v-for="(producto, index) in productos" :key="producto.id">
+                        <h2>{{ producto.nombre }}</h2>
+                        <button id="counter" @click="AgregarAlCarrito(producto)" class="btn btn-info">
+                            Añadir al carro: {{ producto.precio }}$
+                        </button>
+                        <img :src="producto.imagen" alt="producto Image" class="img-fluid">
+                    </div>
+                </div>
+                <aside class="col-lg-3">
+                    <br>
+                    <h1 class="display-4">CESTA </h1> <div><button @click="clearCesta">Limpiar Cesta</button></div>
+                    <br>
+                    <ul class="productos-elegidos">
+                       
+                        <br>
+                        <li class="list-group-item" v-for="(producto, index) in carrito" :key="producto.id">
+                            {{ producto.nombre }} x {{ producto.cantidad }} ({{producto.precio}})
+                        </li>
+                       
+                    </ul>
+                    
+                    <p>Total: {{ total }}$</p>
+                </aside>
+                <footer class="footer mt-5"></footer>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
